@@ -47,8 +47,24 @@ public class Facturas {
         if (todos) {
             comision += monto * 0.10;
         } else {
-            comision += (productosElectricos >= 3 ? monto * 0.04 : monto * 0.02);
-            comision += (productosAutomotrices > 4 ? monto * 0.04 : monto * 0.02);
+    
+    if (productosElectricos >= 3) {
+        
+        comision = comision + (monto * 0.04);
+    } else {
+        
+        comision = comision + (monto * 0.02);
+    }
+
+   
+    if (productosAutomotrices > 4) {
+        
+        comision = comision + (monto * 0.04);
+    } else {
+        
+        comision = comision + (monto * 0.02);
+    }
+}
             if (productosConstruccion > 0) comision += monto * 0.08;
         }
 
@@ -76,4 +92,5 @@ public class Facturas {
 
     
  
+
 
